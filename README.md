@@ -25,7 +25,7 @@ http://res.cloudinary.com/dm6ofsjtd/image/upload/v1522249877/CB6C8BB0-07EB-4854-
 
 ## Priority Matrix
 
-Include a full list of features that have been prioritized based on the `Time and Importance` Matrix.  
+http://res.cloudinary.com/dm6ofsjtd/image/upload/v1522253007/D7D15B9A-E736-464D-BA57-E2A9D23AD08B.jpg
 
 ## Game Components
 
@@ -76,8 +76,13 @@ Time frames are also key in the development cycle.  You have limited time to cod
 
 | Component | Priority | Estimated Time | Time Invested | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
-| Component 1 | H | 10hrs| 12hrs | 12hrs |
-| Total |  | 10hrs| 12hrs | 12hrs |
+| Defining variables & adding click events | A | 8hrs| 0hrs | 0hrs |
+| Making the images scroll and stop | B | 5hrs| 0hrs | 0hrs |
+| Setting the winning logic and the bank function | C | 7 hrs| 0hrs | 0hrs |
+| Refractoring code to be more DRY | D | 5hrs| 0hrs | 0hrs |
+| Creating a landing page and input field| E| 3hrs| 0hrs | 0hrs |
+| Creating a winning animation, CSS and HTML | F | 8hrs| 0hrs | 0hrs |
+| Total |  | 36hrs| 0hrs | 0hrs |
 
 ## Helper Functions
 Helper functions should be generic enought that they can be reused in other applications. Use this section to document all helper functions that fall into this category.
