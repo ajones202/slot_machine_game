@@ -1,0 +1,217 @@
+@keyframes bounce {
+
+    0%  {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-5px);
+    }
+    100% {
+      transform: translateY(-10px);
+    }
+  }
+
+   body{
+
+    background-image: url("images/bkgr.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    }
+
+    h1 {
+      font-size: 60px;
+      font-family: 'Oswald', sans-serif;
+      text-transform: uppercase;
+      color: white;
+    }
+
+    button, #name-enter {
+      font-size: 40px;
+      font-family: 'Oswald', sans-serif;
+      text-transform: uppercase;
+      color: white;
+      text-align: center;
+      cursor: pointer;
+    }
+
+    p {
+      font-size: 23px;
+      font-family: 'Oswald', sans-serif;
+      text-transform: uppercase;
+      color: white;
+      text-align: center;
+    }
+
+
+
+    .land {
+      display: flex;
+      width: 100%;  height: 100%;
+      position:fixed;
+      background-color: black;
+      padding:0;
+      margin:0;
+      top:0;
+      left:0;
+      justify-content: center;
+      align-items: center;
+    }
+
+    input {
+      width: 500px; height: 70px;
+      font-size: 40px;
+      border-radius: 20px;
+      font-family: 'Oswald', sans-serif;
+    }
+
+    .go, #replay{
+      width: 300px;
+      border-radius: 20px;
+      background-color: orange;
+      margin-left: 20px;
+
+    }
+    .innerland  {
+      width: 1000px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+
+    }
+
+
+
+    #button-one, #button-five, #button-ten {
+      width:350px; height: 150px;
+  }
+
+    #button-one:hover, #button-five:hover, #button-ten:hover {
+      opacity: .5;
+      cursor: pointer;
+
+  }
+
+    #button-one {
+      background-image: url('images/one.png');
+      background-size: cover;
+      border
+    }
+
+
+    #button-five {
+      background-image: url('images/five.png');
+      background-size: cover;
+    }
+
+
+    #button-ten {
+      background-image: url('images/ten.png');
+      background-size: cover;
+    }
+
+    .bet-check {
+      opacity: .5;
+    }
+
+  .main-container {
+      width: 770px; height: 670px;
+      display: flex;
+      flex-wrap: wrap;
+      margin: 0 auto;
+      overflow: hidden;
+      padding-bottom: 20px;
+
+  }
+
+    .inner-rows {
+      width: 225px; height: 2000px;
+      margin-bottom: 1000px;
+
+  }
+    .inner-tiles {
+      border: solid black;
+      width:220px; height: 220px;
+      background-size:cover;
+  }
+
+  #lever{
+      border:solid black;
+      border-radius: 50%;
+      height: 80px; width: 80px;
+      background-color: red;
+      position: absolute;
+      left: 1200px;
+      top: 420px;
+    }
+
+    #lever:hover{
+      transform: translateY(10px);
+    }
+
+  #scorekeep h1 {
+        display: block;
+        width:200px;
+        transform: translateX(600px);
+
+  }
+
+  .cherry {
+     background-image: url('images/cherry.png');
+  }
+  .water {
+     background-image: url('images/water.png');
+  }
+  .crown {
+     background-image: url('images/crown.png');
+  }
+  .clover {
+     background-image: url('images/clover.png');
+  }
+  .strawberry {
+     background-image: url('images/strawberry.png');
+  }
+  .seven {
+     background-image: url('images/seven.png');
+  }
+  .bell {
+     background-image: url('images/bell.png');
+  }
+  .horseshoe {
+     background-image: url('images/horseshoe.png');
+  }
+  .jewel {
+    background-image: url('images/jewel.png');
+  }
+
+  #lose {
+    width: 100%;  height: 100%;
+    position:fixed;
+    background-color: black;
+    padding:0;
+    margin:0;
+    top:0;
+    left:0;
+  }
+
+  .inner-lose {
+    width: 400px;
+    margin:0 auto;
+    margin-top: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+
+  .win {
+    animation: bounce ease 2s;
+  }
+
+  @media (max-width: 667px) {
+body {
+        background-color: darkblue;
+      }
+}
