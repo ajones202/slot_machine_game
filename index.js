@@ -21,7 +21,7 @@ $(document).ready(function(){
     let $go = $('<submit id="name-enter">Next</submit>');
     let $input = $('<input/>');
     let $instruct = $('<h1 id="test"> Please Enter Your Name </h1>');
-    let $startGame = $('<button>Start Game</button>')
+    let $startGame = $('<button>Start Game</button>');
     $('body').append($landing);
     $landing.append($innerland);
     $innerland.append($instruct,$input,$go);
@@ -31,17 +31,18 @@ $(document).ready(function(){
       let $nameAdded = $input.val();
       if($nameAdded === '') {
         alert('Please enter your name');
-      }
-      else {$('#test').text(`Hi ${$nameAdded}, ` + `Insert cash to begin.`);
+      } else {
+        $('#test').text(`Hi ${$nameAdded}, ` + `Insert cash to begin.`);
 
-      $innerland.append($one,$five,$ten,$startGame);
-      $startGame.addClass('go');
-      $go.hide();
-      $input.hide();
-    }
+          $innerland.append($one,$five,$ten,$startGame);
+          $startGame.addClass('go');
+          $go.hide();
+          $input.hide();
+         }
+
 // the user must select a starting bet to continue.
       $startGame.click(function(event) {
-        if ($landing.is(':visible')){
+        if ($landing.is(':visible')) {
         $landing.hide();
       };
 
@@ -52,95 +53,94 @@ $(document).ready(function(){
 
 //the value of the bet is selected and added to the screen
   function captureBet(event) {
-    let bet = 0;
-      bet += parseInt($(event.target).val())
+      let bet = 0;
+      bet += parseInt($(event.target).val());
       event.preventDefault();
       $scorekeep.text(bet);
-      $(event.target).toggleClass('bet-check')
+      $(event.target).toggleClass('bet-check');
       return bet;
   }
 
-    let turns = 4;
+  let turns = 4;
 //these are the possible items you be shown to win. They each have a value
-    let assortment = {
-    'cherry': 2,
-    'water': 3,
-    'crown': 1,
-    'clover': 2,
-    'strawberry': 3,
-    'seven': 2,
-    'bell': 1,
-    'horseshoe' : 1,
-    'jewel' :4,
+  let assortment = {
+      'cherry': 2,
+      'water': 3,
+      'crown': 1,
+      'clover': 2,
+      'strawberry': 3,
+      'seven': 2,
+      'bell': 1,
+      'horseshoe' : 1,
+      'jewel' :4,
 
     }
 
 function spin() {
 
-  turns--//the turns will decrease by one dollar each spin
-  const combos = Object.keys(assortment)
-  let levelOne = combos.slice(0, 3);//the game can be made easier or harder depending on how many things we have in the array.
-  let levelTwo = combos.slice(0, 6);
+      turns--//the turns will decrease by one dollar each spin
+      const combos = Object.keys(assortment)
+      let levelOne = combos.slice(0, 3);//the game can be made easier or harder depending on how many things we have in the array.
+      let levelTwo = combos.slice(0, 6);
 
-  result =[]; //This holds the three random elements
+      result =[]; //This holds the three random elements
 
-  for(let i = 0; i < 3; i++) {
-    combos[Math.floor(Math.random() * combos.length)];
-  }
+      for(let i = 0; i < 3; i++) {
+        combos[Math.floor(Math.random() * combos.length)];
+      }
 
-  for(let i = 0; i < 3; i++) {
-    result.push(combos[Math.floor(Math.random() * combos.length)]);
-  }
+      for(let i = 0; i < 3; i++) {
+        result.push(combos[Math.floor(Math.random() * combos.length)]);
+      }
 
-  //here we loop through the spaces in the dom and add the three random images to them
-  let ids = [ '#square-two', '#square-five','#square-eight'];
+      //here we loop through the spaces in the dom and add the three random images to them
+      let ids = [ '#square-two', '#square-five','#square-eight'];
 
-  for (let i = 0; i<ids.length; i++) {
-      classCheck(result[i],$(ids[i]));
+      for (let i = 0; i<ids.length; i++) {
+          classCheck(result[i],$(ids[i]));
 
-  }
+      }
 
-//if there are three like pictures in a row, then win. Points are calculated based on assortment.
-  if((result[0]===result[1])&&(result[1]===result[2])) {
-    console.log(`triple match on ${result[0]} which have a value of ${assortment[result[0]]}`);
-    turns += (assortment[result[0]] * 10);
-    console.log(` You now have ${turns} turns`);
-    $('.inner-tiles').addClass('win');
-    alert('win!');
+    //if there are three like pictures in a row, then win. Points are calculated based on assortment.
+      if((result[0]===result[1])&&(result[1]===result[2])) {
+        console.log(`triple match on ${result[0]} which have a value of ${assortment[result[0]]}`);
+        turns += (assortment[result[0]] * 10);
+        console.log(` You now have ${turns} turns`);
+        $('.inner-tiles').addClass('win');
+        alert('win!');
 
-  } // if there are two in a row, this is a partial win
-  else if((result[0]===result[1])||(result[1]===result[2])){
-    console.log(`double match on ${result[1]} which have a value of ${assortment[result[1]]}`);
-    turns += (assortment[result[1]] * 2);
-    console.log(` You now have ${turns} turns`);
-  }
+      } // if there are two in a row, this is a partial win
+      else if((result[0]===result[1])||(result[1]===result[2])){
+        console.log(`double match on ${result[1]} which have a value of ${assortment[result[1]]}`);
+        turns += (assortment[result[1]] * 2);
+        console.log(` You now have ${turns} turns`);
+      }
 
 
-  $('.rand').each(function(i, val) {
-    $(this).removeClass('cherry water crown clover strawberry seven bell horseshoe jewel');
-    $(this).addClass(combos[Math.floor(Math.random() * combos.length)]);
-    });
+      $('.rand').each(function(i) {
+        $(this).removeClass('cherry water crown clover strawberry seven bell horseshoe jewel');
+        $(this).addClass(combos[Math.floor(Math.random() * combos.length)]);
+        });
 
-  $scorekeep.text(`${turns}`);
+      $scorekeep.text(`${turns}`);
 
-  if((parseInt($scorekeep.text())) <= 0){
-    let bet = 0;
-    let turns = 4;
-    lose();
-  }
+      if((parseInt($scorekeep.text())) <= 0){
+        let bet = 0;
+        let turns = 4;
+        lose();
+    }
 }
 
-
 function lose() {
-  if ($('#lose').is(':hidden')){
+    if ($('#lose').is(':hidden')) {
         $('#lose').show();
-      };
-  let bet = 0;
-  let turns = 4;
-  let $replay = $('<button id="replay">Continue</button>');
-  $('body').append('<div id="lose"></div>');
-  $('#lose').append('<div class="inner-lose"></div>');
-  $('.inner-lose').append('<h1>Add more cash and play again?</h1>',$one,$five,$ten,$replay);
+        };
+    let bet = 0;
+    let turns = 4;
+    let $replay = $('<button id="replay">Continue</button>');
+    $('body').append('<div id="lose"></div>');
+    $('#lose').append('<div class="inner-lose"></div>');
+    $('.inner-lose').append('<h1>Add more cash and play again?</h1>',$one,$five,$ten,$replay);
 
       $replay.click(function(event) {
         $('#lose').css('visibility', 'hidden');
