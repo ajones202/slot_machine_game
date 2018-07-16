@@ -40,5 +40,3 @@ A play again button will appear upon the game finishing.
 - animated handle pull
 - scroll/stop at different speeds
 - a burst of icons when the user wins
-
-## Functional Components
