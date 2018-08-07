@@ -44,7 +44,6 @@
     }
 
 
-
     .land {
       display: flex;
       width: 100%;  height: 100%;
@@ -85,13 +84,13 @@
 
     #button-one, #button-five, #button-ten {
       width:350px; height: 150px;
-  }
+     }
 
     #button-one:hover, #button-five:hover, #button-ten:hover {
       opacity: .5;
       cursor: pointer;
 
-  }
+     }
 
     #button-one {
       background-image: url('images/one.png');
@@ -115,7 +114,7 @@
       opacity: .5;
     }
 
-  .main-container {
+   .main-container {
       width: 770px; height: 670px;
       display: flex;
       flex-wrap: wrap;
@@ -205,13 +204,7 @@
     flex-wrap: wrap;
   }
 
-
   .win {
     animation: bounce ease 2s;
   }
 
-  @media (max-width: 667px) {
-body {
-        background-color: darkblue;
-      }
-}
